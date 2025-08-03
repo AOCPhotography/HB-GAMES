@@ -1,120 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  font-family: 'Bebas Neue', sans-serif;
-  background: black;
-  overflow: hidden;
-}
-
-.hidden {
-  display: none !important;
-  pointer-events: none !important;
-}
-
+/* ===== General Screen Layout ===== */
 .screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center;
 }
 
-.pilsner-style {
-  font-weight: 400;
+.hidden {
+  display: none !important;
+}
+
+/* ===== Spin Screen ===== */
+#spin-screen {
+  background: url('assets/backgrounds/your_spin_bg.png') center/cover no-repeat;
+}
+
+/* ===== Spin Button - Rounded Rectangle ===== */
+#spin-button {
+  background-color: #f5f0d0; /* Cream */
+  border: 6px solid black;
+  border-radius: 20px; /* Rounded corners */
+  padding: 40px 80px;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#spin-button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Spin Animation ===== */
+.spin-anim {
+  animation: spinGrow 6s ease-out forwards;
+}
+
+@keyframes spinGrow {
+  0%   { transform: rotate(0deg) scale(1, 1); }
+  50%  { transform: rotate(5400deg) scale(2, 1.2); }
+  100% { transform: rotate(10800deg) scale(3, 1.5); }
+}
+
+/* ===== Text Fade Animations ===== */
+.fade-out-text {
+  animation: fadeOut 0.4s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ===== Shared Cream Box Style ===== */
+.game-box {
+  font-size: 4rem;
+  background-color: rgba(255, 248, 220, 0.95); /* Cream color with opacity */
+  padding: 20px 40px;
+  border: 5px solid black;
+  border-radius: 20px;
+  max-width: 80%;
   color: black;
   text-align: center;
-  font-size: clamp(2em, 6vw, 5em);
-  line-height: 1.4;
-  padding: 20px 40px;
-  background: rgba(255,255,255,0.85);
-  border: 5px solid black;
-  border-radius: 15px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3); /* Depth effect */
 }
 
-/* SPIN screen */
-#spin-screen {
+/* ===== Game Screen ===== */
+#game-screen {
   background: url('assets/backgrounds/your_spin_bg.png') center/cover no-repeat;
   flex-direction: column;
 }
 
-/* Cream SPIN button (3× bigger) */
-#spin-button {
-  font-size: 5em;
-  padding: 40px 120px;
-  background-color: #FFFDD0;
-  border: 6px solid black;
-  border-radius: 50px;
-  box-shadow: 0px 5px 25px rgba(0,0,0,0.6);
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: transform 0.15s ease, background 0.3s ease;
-  z-index: 5;
-}
-#spin-button:hover {
-  background-color: #f7f3b3;
-  transform: scale(1.1);
+/* ===== Price Screen ===== */
+#price-screen {
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
 }
 
-/* Menu icon */
+#price-text {
+  user-select: none; /* Prevent highlight */
+}
+
+/* ===== Dropdown Menu ===== */
 #menu-icon {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 2em;
+  font-size: 3rem;
   cursor: pointer;
-  background: rgba(255,255,255,0.7);
-  padding: 5px 10px;
-  border-radius: 10px;
-  z-index: 10;
+  z-index: 100; /* Always clickable */
 }
 
-/* Game menu dropdown */
 #game-menu {
-  position: absolute;
-  top: 60px;
+  position: fixed;
+  top: 70px;
   right: 20px;
   background: white;
-  border: 3px solid black;
-  display: flex;
-  flex-direction: column;
-  z-index: 20;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 101;
 }
-.mode-button {
-  font-size: 1.5em;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
+
+#game-menu.hidden {
+  display: none;
+}
+
+#game-menu .mode-button {
+  display: block;
+  padding: 15px 20px;
+  font-size: 1.5rem;
   background: white;
-}
-.mode-button:hover {
-  background: lightgray;
-}
-
-/* Spin animation text */
-#spin-animation-screen {
-  background: black;
-}
-#spin-animation-text {
-  font-size: clamp(3em, 8vw, 6em);
-  background: none;
   border: none;
-  color: white;
+  text-align: left;
+  cursor: pointer;
 }
 
-/* Transitions */
-.fade-in {
-  animation: fadeIn 0.8s ease forwards;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
+#game-menu .mode-button:hover {
+  background: #f5f0d0;
 }

@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HB Games - Fake Contestant Show</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HB Games</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- SPIN SCREEN -->
-<div id="spin-screen" class="screen fade-in">
-  <div id="menu-icon">&#8942;</div>
-  <button id="spin-button">SPIN</button>
-</div>
+  <!-- Menu Icon (Only visible on Spin Screen) -->
+  <div id="menu-icon">☰</div>
 
-<!-- GAME MODE MENU -->
-<div id="game-menu" class="hidden">
-  <button class="mode-button" data-game="1">GAME 1</button>
-  <button class="mode-button" data-game="2">GAME 2</button>
-  <button class="mode-button" data-game="3">GAME 3</button>
-</div>
+  <!-- Game Mode Menu -->
+  <div id="game-menu" class="hidden">
+    <button class="mode-button" data-game="1">Game 1</button>
+    <button class="mode-button" data-game="2">Game 2</button>
+    <button class="mode-button" data-game="3">Game 3</button>
+  </div>
 
-<!-- SPIN ANIMATION SCREEN -->
-<div id="spin-animation-screen" class="screen hidden fade-in">
-  <div id="spin-animation-text" class="pilsner-style"></div>
-</div>
+  <!-- Spin Screen -->
+  <div id="spin-screen" class="screen">
+    <button id="spin-button">SPIN</button>
+  </div>
 
-<!-- CATEGORY SCREEN -->
-<div id="category-screen" class="screen hidden fade-in">
-  <div id="category-title" class="pilsner-style"></div>
-</div>
+  <!-- Game Screen (Page 2 - Directly Shows Game Prompt) -->
+  <div id="game-screen" class="screen hidden">
+    <div id="game-title" class="game-box"></div>
+  </div>
 
-<!-- GAME SCREEN -->
-<div id="game-screen" class="screen hidden fade-in">
-  <div id="game-title" class="pilsner-style"></div>
-</div>
+  <!-- Price Screen (Special for Price is HUH?) -->
+  <div id="price-screen" class="screen hidden">
+    <div id="price-text" class="game-box"></div>
+  </div>
 
-<!-- PRICE REVEAL SCREEN -->
-<div id="price-screen" class="screen hidden fade-in">
-  <div id="price-text" class="pilsner-style"></div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
