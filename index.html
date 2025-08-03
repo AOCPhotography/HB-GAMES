@@ -1,9 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fake Contestant Show</title>
+  <meta charset="UTF-8">
+  <title>HB Games - Fake Contestant Show</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, this is the game!</h1>
+
+<!-- SPIN SCREEN -->
+<div id="spin-screen" class="screen fade-in">
+  <div id="menu-icon">&#8942;</div>
+  <button id="spin-button">SPIN</button>
+</div>
+
+<!-- GAME MODE MENU -->
+<div id="game-menu" class="hidden">
+  <button class="mode-button" data-game="1">GAME 1</button>
+  <button class="mode-button" data-game="2">GAME 2</button>
+  <button class="mode-button" data-game="3">GAME 3</button>
+</div>
+
+<!-- SPIN ANIMATION SCREEN -->
+<div id="spin-animation-screen" class="screen hidden fade-in">
+  <div id="spin-animation-text" class="pilsner-style"></div>
+</div>
+
+<!-- CATEGORY SCREEN -->
+<div id="category-screen" class="screen hidden fade-in">
+  <div id="category-title" class="pilsner-style"></div>
+</div>
+
+<!-- GAME SCREEN -->
+<div id="game-screen" class="screen hidden fade-in">
+  <div id="game-title" class="pilsner-style"></div>
+</div>
+
+<!-- PRICE REVEAL SCREEN -->
+<div id="price-screen" class="screen hidden fade-in">
+  <div id="price-text" class="pilsner-style"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', sans-serif;
+  background: black;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pilsner-style {
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  font-size: clamp(2em, 6vw, 5em);
+  line-height: 1.4;
+  padding: 20px 40px;
+  background: rgba(255,255,255,0.85);
+  border: 5px solid black;
+  border-radius: 15px;
+}
+
+/* SPIN screen */
+#spin-screen {
+  background: url('assets/backgrounds/your_spin_bg.png') center/cover no-repeat;
+  flex-direction: column;
+}
+
+/* Cream SPIN button (3× bigger) */
+#spin-button {
+  font-size: 5em;
+  padding: 40px 120px;
+  background-color: #FFFDD0;
+  border: 6px solid black;
+  border-radius: 50px;
+  box-shadow: 0px 5px 25px rgba(0,0,0,0.6);
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.15s ease, background 0.3s ease;
+  z-index: 5;
+}
+#spin-button:hover {
+  background-color: #f7f3b3;
+  transform: scale(1.1);
+}
+
+/* Menu icon */
+#menu-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  background: rgba(255,255,255,0.7);
+  padding: 5px 10px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+/* Game menu dropdown */
+#game-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+.mode-button {
+  font-size: 1.5em;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: white;
+}
+.mode-button:hover {
+  background: lightgray;
+}
+
+/* Spin animation text */
+#spin-animation-screen {
+  background: black;
+}
+#spin-animation-text {
+  font-size: clamp(3em, 8vw, 6em);
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Transitions */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
