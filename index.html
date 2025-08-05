@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HB Games</title>
+  <meta charset="UTF-8">
+  <title>HB GAMES</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Menu Icon (Only visible on Spin Screen) -->
-  <div id="menu-icon">☰</div>
+<!-- Menu -->
+<div id="menu-icon">☰</div>
+<div id="game-menu" class="hidden">
+  <button class="mode-button" data-game="1">Game 1</button>
+  <button class="mode-button" data-game="2">Game 2</button>
+  <button class="mode-button" data-game="3">Game 3</button>
+</div>
 
-  <!-- Game Mode Menu -->
-  <div id="game-menu" class="hidden">
-    <button class="mode-button" data-game="1">Game 1</button>
-    <button class="mode-button" data-game="2">Game 2</button>
-    <button class="mode-button" data-game="3">Game 3</button>
+<!-- Spin Screen -->
+<div id="spin-screen" class="screen">
+  <div id="spin-button">SPIN</div>
+</div>
+
+<!-- Game Screen -->
+<div id="game-screen" class="screen hidden">
+  <div id="game-title" class="game-box"></div>
+</div>
+
+<!-- Price is HUH? Screen -->
+<div id="price-screen" class="screen hidden">
+  <div id="price-text" class="game-box"></div>
+</div>
+
+<!-- Persistent Player Name + Score Boxes -->
+<div id="player-container">
+  <div class="player">
+    <div class="score-box" contenteditable="true">0</div>
+    <div class="name-box" contenteditable="true">PLAYER 1</div>
   </div>
-
-  <!-- Spin Screen -->
-  <div id="spin-screen" class="screen">
-    <button id="spin-button">SPIN</button>
+  <div class="player">
+    <div class="score-box" contenteditable="true">0</div>
+    <div class="name-box" contenteditable="true">PLAYER 2</div>
   </div>
-
-  <!-- Game Screen (Page 2 - Directly Shows Game Prompt) -->
-  <div id="game-screen" class="screen hidden">
-    <div id="game-title" class="game-box"></div>
+  <div class="player">
+    <div class="score-box" contenteditable="true">0</div>
+    <div class="name-box" contenteditable="true">PLAYER 3</div>
   </div>
+</div>
 
-  <!-- Price Screen (Special for Price is HUH?) -->
-  <div id="price-screen" class="screen hidden">
-    <div id="price-text" class="game-box"></div>
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
