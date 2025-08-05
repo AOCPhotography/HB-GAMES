@@ -68,10 +68,29 @@
   to { opacity: 1; }
 }
 
+/* ===== Dissolve Animations (Slower for Spin Excitement) ===== */
+@keyframes dissolveOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes dissolveIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.dissolve-out {
+  animation: dissolveOut 1.2s linear forwards;
+}
+
+.dissolve-in {
+  animation: dissolveIn 1.2s linear forwards;
+}
+
 /* ===== Shared Cream Box Style ===== */
 .game-box {
   font-size: 4rem;
-  background-color: rgba(255, 248, 220, 0.95); /* Cream color with opacity */
+  background-color: rgba(255, 248, 220, 0.95); /* Cream with opacity */
   padding: 20px 40px;
   border: 5px solid black;
   border-radius: 20px;
@@ -81,7 +100,15 @@
   font-family: Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.3); /* Depth effect */
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3); /* Depth */
+}
+
+/* ===== Smaller Descriptions in Cream Box ===== */
+.game-description {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 10px;
+  text-transform: none;
 }
 
 /* ===== Game Screen ===== */
